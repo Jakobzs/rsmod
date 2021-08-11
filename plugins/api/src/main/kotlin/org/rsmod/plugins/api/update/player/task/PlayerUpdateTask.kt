@@ -107,7 +107,7 @@ class PlayerUpdateTask @Inject constructor(
     ) {
         var local = 0
         var added = 0
-        // UpdateGroup is simple an enum used in the GPI processing itself, set as 0 or 1
+        // UpdateGroup is simply an enum used in the GPI processing itself, set as 0 or 1
         local += records.localPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Active)
         local += records.localPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Inactive)
         added += records.worldPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Inactive, local, added)
@@ -169,6 +169,8 @@ class PlayerUpdateTask @Inject constructor(
             if (maskUpdate || moveUpdate) {
                 bitBuf.writeBoolean(true)
             }
+            // We write out the move update, mask update, or else we bitwise OR the flag of the record by 0x2,
+            // set the skipCount and write out the skipcount to the bitbuffer
             when {
                 moveUpdate -> bitBuf.writeLocalMovement(localPlayer, maskUpdate)
                 maskUpdate -> bitBuf.writeMaskUpdateSignal()
