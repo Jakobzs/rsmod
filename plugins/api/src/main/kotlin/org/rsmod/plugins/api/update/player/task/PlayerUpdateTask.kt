@@ -73,6 +73,7 @@ class PlayerUpdateTask @Inject constructor(
     }
 
     private fun CoroutineScope.launchGpi() = launch {
+        // Iterate over all clients and send out GPI
         clientList.forEach { client ->
             launch {
                 val buf = client.gpiBuffer()
@@ -87,6 +88,12 @@ class PlayerUpdateTask @Inject constructor(
         val mainBuf = bufAllocator.buffer()
         val maskBuf = bufAllocator.buffer()
         val masks = device.maskPackets
+
+        // Required data to make GPI work:
+        // Two buffers, one for main data and one for mask data
+        // The player in question
+        // The player's records
+        // A list of players of the current world
         mainBuf.getPlayerInfo(player, playerRecords, maskBuf, masks)
         mainBuf.writeBytes(maskBuf)
         return mainBuf
@@ -100,6 +107,7 @@ class PlayerUpdateTask @Inject constructor(
     ) {
         var local = 0
         var added = 0
+        // UpdateGroup is simple an enum used in the GPI processing itself, set as 0 or 1
         local += records.localPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Active)
         local += records.localPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Inactive)
         added += records.worldPlayerInfo(toBitMode(), player, maskBuf, maskPackets, UpdateGroup.Inactive, local, added)
@@ -116,28 +124,48 @@ class PlayerUpdateTask @Inject constructor(
         var skipCount = 0
         var localPlayers = 0
         forEach { record ->
+            // Set the variable values from the currently iterated record
             val (index, flag, local) = record
+
+            // Check if we are in the correct group. If not, we iterate over the next record
             val inGroup = local && (group.bit and 0x1) == flag
             if (!inGroup) {
                 return@forEach
             }
+
+            // Check for skipcount is greater than 0. If yes we deduct it and OR the flag by 0x2
             if (skipCount > 0) {
                 skipCount--
                 record.flag = (record.flag or 0x2)
                 return@forEach
             }
+
+            // Increment localPlayers
             localPlayers++
+
+            // Now grab the local player
             val localPlayer = playerList[index]
+
+            // In the case that the localPlayer is null, or the localPlayer is not the player, and we can't see that player,
+            // we reset the record and remove the local player
             if (localPlayer == null || localPlayer != player && !player.canView(localPlayer)) {
                 record.reset = true
                 bitBuf.removeLocalPlayer(localPlayer, record)
                 return@forEach
             }
+
+            // Determine whether a mask update is required
             val maskUpdate = localPlayer.isMaskUpdateRequired()
+
+            // Determine whether the player is moving
             val moveUpdate = localPlayer.isMoving()
+
+            // Write out mask update if needed
             if (maskUpdate) {
                 maskBuf.writeMaskUpdate(localPlayer.entity.updates, maskPackets)
             }
+
+            // If either the player needs a mask update or a move update, it has to be written as true to the buffer
             if (maskUpdate || moveUpdate) {
                 bitBuf.writeBoolean(true)
             }
