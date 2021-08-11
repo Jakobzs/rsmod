@@ -76,9 +76,13 @@ class PlayerUpdateTask @Inject constructor(
         // Iterate over all clients and send out GPI
         clientList.forEach { client ->
             launch {
+                // Get the GPI buffer
                 val buf = client.gpiBuffer()
+                // Create packet from it
                 val info = PlayerInfo(buf)
+                // Write it to the player
                 client.player.write(info)
+                // Call group() on each of the player's records
                 client.playerRecords.forEach(::group)
             }
         }
@@ -197,16 +201,23 @@ class PlayerUpdateTask @Inject constructor(
         var added = 0
         var skipCount = 0
         forEach { record ->
+            // Set the variable values from the currently iterated record
             val (index, flag, local) = record
+
+            // Check if we are in the correct group. If not, we iterate over the next record
             val inGroup = !local && (group.bit and 0x1) == flag
             if (!inGroup) {
                 return@forEach
             }
+
+            // Check for skipcount is greater than 0. If yes we deduct it and OR the flag by 0x2
             if (skipCount > 0) {
                 skipCount--
                 record.flag = (record.flag or 0x2)
                 return@forEach
             }
+
+            // Grab the global player from the list
             val globalPlayer = if (index in playerList.indices) playerList[index] else null
             if (globalPlayer != null) {
                 val capacityReached = added + previouslyAdded >= MAX_PLAYER_ADDITIONS_PER_CYCLE ||
