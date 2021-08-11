@@ -147,7 +147,8 @@ class PlayerUpdateTask @Inject constructor(
             val localPlayer = playerList[index]
 
             // In the case that the localPlayer is null, or the localPlayer is not the player, and we can't see that player,
-            // we reset the record and remove the local player
+            // we reset the record and remove the local player. This would happen with for example logout, or the
+            // player goes out of reach for us
             if (localPlayer == null || localPlayer != player && !player.canView(localPlayer)) {
                 record.reset = true
                 bitBuf.removeLocalPlayer(localPlayer, record)
