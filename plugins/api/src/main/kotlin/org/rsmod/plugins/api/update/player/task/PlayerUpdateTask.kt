@@ -91,6 +91,7 @@ class PlayerUpdateTask @Inject constructor(
     private fun Client.gpiBuffer(): ByteBuf {
         val mainBuf = bufAllocator.buffer()
         val maskBuf = bufAllocator.buffer()
+        // The masks that exists for each device
         val masks = device.maskPackets
 
         // Required data to make GPI work:
