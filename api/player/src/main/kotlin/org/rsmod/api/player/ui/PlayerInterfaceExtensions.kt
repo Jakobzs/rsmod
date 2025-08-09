@@ -207,11 +207,11 @@ public fun Player.ifCloseModals(eventBus: EventBus) {
 public fun Player.ifSetEvents(target: ComponentType, range: IntRange, vararg event: IfEvent) {
     // TODO: keep track of these and clear them when closing their respective interface
     val packed = event.fold(0) { sum, element -> sum or element.bitmask }
-    client.write(IfSetEvents(target.interfaceId, target.component, range.first, range.last, packed))
+    //client.write(IfSetEvents(target.interfaceId, target.component, range.first, range.last, packed))
 }
 
 public fun Player.ifSetText(target: ComponentType, text: String) {
-    client.write(IfSetText(target.interfaceId, target.component, text))
+    //client.write(IfSetText(target.interfaceId, target.component, text))
 }
 
 public fun Player.ifSetHide(target: ComponentType, hide: Boolean) {

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa8e2321-dd94-4292-afca-19b9a5b61eef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/api/net/src/main/kotlin/org/rsmod/api/net/rsprot/RspCycle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/net/src/main/kotlin/org/rsmod/api/net/rsprot/RspCycle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/player-output/src/main/kotlin/org/rsmod/api/player/output/UpdateInventory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/player-output/src/main/kotlin/org/rsmod/api/player/output/UpdateInventory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/player-output/src/main/kotlin/org/rsmod/api/player/output/VarpSync.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/player-output/src/main/kotlin/org/rsmod/api/player/output/VarpSync.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/player/src/main/kotlin/org/rsmod/api/player/ui/PlayerInterfaceExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api/player/src/main/kotlin/org/rsmod/api/player/ui/PlayerInterfaceExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/other/login/src/main/kotlin/org/rsmod/content/other/login/LoginScript.kt" beforeDir="false" afterPath="$PROJECT_DIR$/content/other/login/src/main/kotlin/org/rsmod/content/other/login/LoginScript.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rsmod" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rsmod" type="f1a62948:ProjectNode" />
+                <item name="rsmod" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rsmod" type="f1a62948:ProjectNode" />
+                <item name="rsmod" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rsmod" type="f1a62948:ProjectNode" />
+                <item name="rsmod" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rsmod" type="f1a62948:ProjectNode" />
+                <item name="build-logic" type="2d1252cf:ModuleNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;ffde005d&quot;
+}</component>
+  <component name="ProjectId" id="2wJh2tBS5IT144aMJPVYmJWYgZL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build rsmod.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.rsmod [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.GameServer.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jakob/Documents/GitHub/Jakobzs/rsmod&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Kotlin.GameServer">
+    <configuration name="rsmod [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.rsmod [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa8e2321-dd94-4292-afca-19b9a5b61eef" name="Changes" comment="" />
+      <created>1745765380253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745765380253</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.rsprot/osrs-230-model/1.0.0-ALPHA-20250416/187f05b54969f1d978f9296e33ccca44a7be8d7d/osrs-230-model-1.0.0-ALPHA-20250416-sources.jar!/main/net/rsprot/protocol/game/outgoing/info/playerinfo/PlayerInfoProtocol.kt</url>
+          <line>186</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

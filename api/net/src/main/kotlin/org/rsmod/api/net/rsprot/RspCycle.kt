@@ -89,10 +89,10 @@ class RspCycle(
                 player.coords.x - player.buildArea.x,
                 player.coords.z - player.buildArea.z,
             )
-        session.queue(SetActiveWorldV2(SetActiveWorldV2.RootWorldType(player.level)))
+        //session.queue(SetActiveWorldV2(SetActiveWorldV2.RootWorldType(player.level)))
         session.queue(playerInfo.toPacket())
-        session.queue(origin)
-        session.queue(npcInfo.toPacket(worldId))
+        //session.queue(origin)
+        //session.queue(npcInfo.toPacket(worldId))
     }
 
     private fun Player.updateMoveSpeed() {

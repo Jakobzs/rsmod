@@ -20,6 +20,6 @@ public object VarpSync {
             } else {
                 VarpLarge(varp.id, value)
             }
-        client.write(message)
+        //client.write(message)
     }
 }

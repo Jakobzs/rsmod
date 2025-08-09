@@ -89,12 +89,12 @@ constructor(
         resetCam()
         runClientScript(828, 1)
         runClientScript(5141)
-        sendPlayerOps()
+        //sendPlayerOps()
         runClientScript(876, mapClock.cycle, 0, displayName, "REGULAR")
         sendStats()
         sendRun()
-        client.write(ResetAnims)
-        client.write(MinimapToggle(0))
+        //client.write(ResetAnims)
+        //client.write(MinimapToggle(0))
     }
 
     private fun Player.sendInvs() {
